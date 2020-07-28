@@ -26,31 +26,7 @@ class _RestoranState extends State<Restoran> {
         child: ListView.builder(
           itemCount: menu.length,
           itemBuilder: (context, position) {
-            return Card(
-              margin: EdgeInsets.all(8.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.all(8.0),
-                    child: Image.network(
-                      menu[position].imageUrl,
-                      width: 100.0,
-                    ),
-                  ),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        menu[position].namaMenu,
-                        style: TextStyle(fontSize: 20.0),
-                      ),
-                      Text("IDR " + menu[position].hargaMenu.toString(),
-                          style: TextStyle(fontSize: 18.0, color: Colors.blue))
-                    ],
-                  )
-                ],
-              ),
-            );
+            return Menu.createItem(menu[position], context);
           },
         ),
       ),
@@ -79,6 +55,16 @@ getAll() {
         imageUrl:
             "https://cdn.yummy.co.id/content-images/images/20200408/KKyp9f7EnJT0zvD3JNq8xEl6oXDLZ8j2-31353836333236323339d41d8cd98f00b204e9800998ecf8427e_400x400.jpg",
         namaMenu: "Beef Yakiniku",
-        hargaMenu: 30000)
+        hargaMenu: 30000),
+    Menu(
+        imageUrl:
+        "https://img.kurio.network/DSXPyBfZEnZ1OOPL1scL0hLCgwA=/400x400/filters:quality(80):format(jpeg)/https://kurio-img.kurioapps.com/20/04/26/8b1bd172-6e3c-4147-b5f5-8e81119e7825.jpeg",
+        namaMenu: "Fried Rice",
+        hargaMenu: 15000),
+    Menu(
+        imageUrl:
+        "https://feelgoodfoodie.net/wp-content/uploads/2018/10/Chicken-Noodle-Soup-11-400x400.jpg",
+        namaMenu: "Chicken Noodle",
+        hargaMenu: 13000)
   ];
 }
