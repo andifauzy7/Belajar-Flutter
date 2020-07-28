@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/contoh.dart';
+import 'package:flutter_app/latihan_list/restoran.dart';
 import 'package:flutter_app/login.dart';
 import 'package:flutter_app/tab.dart';
 
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: ExampleTabBar(),
+      home: Restoran(),
     );
   }
 }
